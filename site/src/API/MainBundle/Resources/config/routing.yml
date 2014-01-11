@@ -1,0 +1,3 @@
+#users:
+#    type: rest
+#    resource: MC\UserBundle\Controller\UsersAPIController
