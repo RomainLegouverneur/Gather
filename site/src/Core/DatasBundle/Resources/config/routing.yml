@@ -1,0 +1,3 @@
+CoreDatasBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: CoreDatasBundle:Default:index }

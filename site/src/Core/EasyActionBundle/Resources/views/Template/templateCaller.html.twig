@@ -1,0 +1,48 @@
+{% if view.layout == false or view.layout == null or view.layout == '' %}
+    {% set layout = 'CoreEasyActionBundle:Template:emptyLayout.html.twig' %}
+{% else %}
+    {% set layout = view.layout %}
+{% endif %}
+
+{% extends layout %}
+
+{% block title %}
+    {% if view.layout and view.title %}
+        {{ view.title }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% if view.layout and view.stylesheets %}
+        {% for stylesheet in view.stylesheets %}
+           <link rel="stylesheet" media="screen" type="text/css" href="{{ stylesheet }}" /> 
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% if view.layout and view.javascripts %}
+        {% for javascript in view.javascripts %}
+           <script type="text/javascript" src="{{ javascript }}" ></script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block metas %}
+    {% if view.layout and view.metas %}
+        {% for meta in view.metas %}
+           <meta name="{{ meta.1 }}" content="{{ meta.2 }}">
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {% if template %}
+        {% include template with vars %}
+    {% endif %}
+{% endblock %}

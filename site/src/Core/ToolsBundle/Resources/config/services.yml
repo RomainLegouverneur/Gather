@@ -1,0 +1,33 @@
+parameters:
+#    showcase_main.example.class: Core\DatasBundle\Example
+
+services:
+    #twig.extension.securelink:
+     #   class: Core\ToolsBundle\Twig\Extension\SecureLinkExtension
+      #  arguments: [@router, @form.factory]
+       # tags:
+        #    - { name: twig.extension }
+    twig.extension.message_dipslayer:
+        class: Core\ToolsBundle\Twig\Extension\MessageDisplayerExtension
+        tags:
+            - { name: twig.extension }
+    twig.extension.user_profile_dipslayer:
+        class: Core\ToolsBundle\Twig\Extension\UserProfileDisplayerExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }
+    twig.extension.date_time:
+        class: Core\ToolsBundle\Twig\Extension\DateTimeExtension
+        tags:
+            - { name: twig.extension }
+    twig.extension.debug:
+        class: Core\ToolsBundle\Twig\Extension\DebugExtension
+        tags:
+            - { name: twig.extension }
+    twig.extension.slug:
+        class: Core\ToolsBundle\Twig\Extension\SlugExtension
+        tags:
+            - { name: twig.extension }
+#    showcase_main.example:
+#        class: %showcase_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

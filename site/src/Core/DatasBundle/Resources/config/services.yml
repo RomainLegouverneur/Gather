@@ -1,0 +1,7 @@
+parameters:
+#    core_datas.example.class: Core\DatasBundle\Example
+
+services:
+#    core_datas.example:
+#        class: %core_datas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

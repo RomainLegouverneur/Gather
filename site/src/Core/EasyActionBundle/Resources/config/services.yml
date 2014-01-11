@@ -1,0 +1,8 @@
+parameters:
+#    core_easy_action.example.class: Core\EasyActionBundle\Example
+
+services:
+  kernel.controller:
+    class: Core\EasyActionBundle\Listener\ControllerListener
+    tags:
+        - { name: kernel.event_listener, event: kernel.controller }

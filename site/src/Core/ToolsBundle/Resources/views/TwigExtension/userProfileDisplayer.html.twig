@@ -1,0 +1,7 @@
+<a href="#" id="userprofile_{{ uniqid }}">{{ user }}</a>
+<script type="text/javascript">
+    $("#userprofile_{{ uniqid }}").popover({
+        title: '{{ user }}',
+        content: '{{ content | raw}}',
+    });
+</script>
